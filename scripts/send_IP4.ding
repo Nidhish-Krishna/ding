@@ -1,5 +1,5 @@
 Sample Script to send an IP4 PACKET
-
+You can view packet in wireshark
  * We will specify the transport layer protocol as UDP
  * But the UDP packet will not be in packet format
  * The UDP packet will be given in the stream format
