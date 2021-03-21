@@ -1,5 +1,5 @@
 Sample Script to send an ARP PACKET
-
+You can view the packet the packet using wireshark
 .decl:
   packet ARP, ETH    ! ARP and Ether packets are declared
 
