@@ -1,0 +1,54 @@
+Sample Script #3
+
+ * In this script, we will declare a packet
+ * We will assign values to the members of the packet
+ * We will assign values using raw values
+ * And we will print all the members
+
+.decl: 
+  packet my_packet    ! A packet is declared
+
+.func:
+  !!! Block in which user defined functions are written
+  !!! User Defined Function feature is not yet developed/implemented
+  !!! Any Code inside this block will be ignored by the interpreter
+
+.flow:
+  my_packet = container("ETHER")
+
+  ! Empty Ether container for the packet is created
+  ! The packet structure has been defined to be Ether
+
+  my_packet.DEST_MAC = ff-dd-ee-cc-bb-aa
+  my_packet.SRC_MAC = 11-22-33-44-55-66
+  my_packet.TYPE = 2048:2B
+  my_packet.CRC = 0:4B
+  my_packet.PAYLOAD = "Hello World !"
+
+  ! Ether Packet has been defined
+
+  ! All member variables have been assigned raw values
+  ! Let us print them all
+
+  print("Printing all the member variables' values...")
+  print("--------------------------------------------")
+  print()
+
+  ! print() without arguments prints an empty line
+
+  print("Destination MAC: ", my_packet.DEST_MAC)
+  print("Source MAC: ", my_packet.SRC_MAC)
+  print("Ether Type: ", my_packet.TYPE)
+  print("CRC: ", my_packet.CRC)
+  print("Payload: ", my_packet.PAYLOAD)
+
+  ! Payload can also be of packet type
+  ! One packet can be payload to another packet
+
+  print()
+  print("Let us print the whole packet...")
+  print(my_packet)
+
+  print()
+  print("We have printed all the values !")
+

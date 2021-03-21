@@ -1,0 +1,26 @@
+Sample Script #5
+
+ * In this script, we will take a look at the cat() function
+ * For cat(), if all arguments are string, then string is returned else stream is returned
+
+.decl:
+  string output_string  ! string variable
+  stream output_stream  ! stream variable
+
+.func:
+  !!! Block in which user defined functions are written
+  !!! User Defined Function feature is not yet developed/implemented
+  !!! Any Code inside this block will be ignored by the interpreter
+
+.flow:
+  output_string = cat("Hello ", "World ! ", "This ", "is an ", "example for ", "string concatenation !")
+  output_stream = cat("abcd", 1.2.3.4, 12-34-56-ab-cd-ef, 10:1B, xfadd, 11:10:13)
+
+  ! Concatenating function used
+
+  print(output_string)
+  print(output_stream)
+
+  print(cat(cat(cat(cat("This ","is ", "an "),"example ","for "),"multiple "),"nested ","concatenations "))
+
+  ! Nested concatenations

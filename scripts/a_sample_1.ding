@@ -1,0 +1,62 @@
+
+Sample Script #1
+
+ * In this script, we will declare variables of different datatypes
+ * We will assign values to the variables, and print them
+ * However, we will not declare any packets in this script
+ * We will also print raw values
+
+.decl: 
+  ip4 my_ip4             ! ip4 variable decalred
+  mac my_mac             ! mac variable decalred
+  bit my_age             ! bit variable declared
+  number my_year           ! number variable declared
+  string my_city           ! string variable declared
+  stream hex_stream, num_stream    ! stream variables declared
+
+.func:
+  !!! Block in which user defined functions are written
+  !!! User Defined Function feature is not yet developed/implemented
+  !!! Any Code inside this block will be ignored by the interpreter
+
+.flow:
+  my_ip4 = 192.168.4.103         ! IP4 value is assigned
+  my_mac = ab-cd-ef-12-34-56       ! MAC value is assigned
+  my_age = 22:5b             ! A 5-bit value of 22 is assigned
+  my_year = 1998:2B            ! A 2-byte value of 1998 is assigned
+  my_city = "Coimbatore is my city"    ! String is assigned
+  hex_stream = x1234567890abcdef     ! A Hex byte stream is assigned
+  num_stream = 12:255:9:200        ! A Decimal byte stream is assigned
+
+  ! All variables have been assigned values
+  ! Let us print them all
+
+  print("Printing all the declared variables' values...")
+  print("----------------------------------------------")
+  print()
+
+  ! print() without arguments prints an empty line
+
+  print("My IP4 Address is: ", my_ip4)
+  print("My MAC Address is: ", my_mac)
+  print("My age is: ", my_age)
+  print("My year of birth is: ", my_year)
+  print("My city is: ", my_city)
+  print("The Hex byte stream: ", hex_stream)
+  print("The Decimal byte stream: ", num_stream)
+
+  print()
+  print("We have printed all the values !")
+  print()
+  print("Let us try to print some raw values...")
+  print("--------------------------------------------------------")
+  print()
+
+  print("Raw IP4 address: ", 127.0.0.1)
+  print("Raw MAC address: ", 99-88-77-66-55-44)
+  print("Raw Bit value: ", 17:5b)
+  print("Raw Number value: ", 200:1B)
+  print("Raw String value: ", "Hello World")
+  print("Raw Hex byte stream: ", xfeedcabb)
+  print("Raw Decimal byte stream: ", 15:255:1:16)
+

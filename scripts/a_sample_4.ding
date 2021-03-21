@@ -1,0 +1,62 @@
+Sample Script #4
+
+ * In this script, we will declare a packet
+ * We will assign stream values to all the members of the packet
+ * We will assign values using raw stream values and from stream variables
+ * And we will print all the members
+
+.decl: 
+  packet my_packet           ! A packet is declared
+
+  stream src_mac, ether_type, payload  ! stream variables for members
+
+.func:
+  !!! Block in which user defined functions are written
+  !!! User Defined Function feature is not yet developed/implemented
+  !!! Any Code inside this block will be ignored by the interpreter
+
+.flow:
+  my_packet = container("ETHER")
+
+  ! Empty Ether container for the packet is created
+  ! The packet structure has been defined to be Ether
+
+  src_mac = x112233445566
+  ether_type = x0800
+  payload = x48656c6c6f20576f726c64202100  ! Hex stream for "Hello World !"
+
+  ! variables for members are defined with stream values
+
+  my_packet.DEST_MAC = xffddeeccbbaa
+  my_packet.SRC_MAC = src_mac
+  my_packet.TYPE = ether_type
+  my_packet.CRC = xcafef00d
+  my_packet.PAYLOAD = payload
+
+  ! Ether Packet has been defined
+
+  ! All member variables have been assigned to stream values
+  ! Let us print them all
+
+  print("Printing all the member variables' values...")
+  print("--------------------------------------------")
+  print()
+
+  ! print() without arguments prints an empty line
+
+  print("Destination MAC: ", my_packet.DEST_MAC)
+  print("Source MAC: ", my_packet.SRC_MAC)
+  print("Ether Type: ", my_packet.TYPE)
+  print("CRC: ", my_packet.CRC)
+  print("Payload: ", my_packet.PAYLOAD)
+
+  ! Payload can also be of packet type or stream type
+  ! One packet can be payload to another packet
+
+  print()
+  print("Let us print the whole packet...")
+  print("Our Ether packet...", my_packet)
+
+  print()
+  print("We have printed all the values !")
+
